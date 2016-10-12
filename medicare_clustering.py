@@ -6,14 +6,13 @@ Created on Wed Oct 12 11:21:01 2016
 """
 import numpy as np
 from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
-import matplotlib.pyplot as plt
+from sklearn.metrics import silhouette_score
 
 data = np.loadtxt("clean_providers.csv", delimiter = ",")
 
 #cluster
 km = KMeans(n_clusters = 6).fit(data)
-km.fit(data)
+kmlabels = km.labels_
 
-reduced_data = PCA(n_components = 2).fit_transform(data)
-r_km = KMeans(n_clusters = 6).fit(reduced_data)
+silhouette_avg = silhouette_score(data, kmlabels, sample_size = 1000)
+print("The average silhouette_score is :", silhouette_avg)
