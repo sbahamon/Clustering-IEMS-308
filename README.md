@@ -5,7 +5,7 @@ These are Python files I used in Fall of 2016 to complete a clustering homework 
 I clustered on gender, number of patients seen, and total payment given to the physician to see if there was evidence of systematic payment discrimination. Turns out there's none.
 
 
-Table of Contents:
+### Table of Contents:
 
 
 1. medicare_data_cleaning.py - reads in the csv format, cleans it to find relevant features using pandas, converts it to a numpy array,                                   saves it to a csv.
